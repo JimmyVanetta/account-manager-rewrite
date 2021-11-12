@@ -1,4 +1,10 @@
+﻿using Microsoft.EntityFrameworkCore;
+using Microsoft.Extensions.DependencyInjection;
+using account_manager_backend.Data;
 var builder = WebApplication.CreateBuilder(args);
+
+builder.Services.AddDbContext<account_manager_backendContext>(options =>
+    options.UseSqlServer(builder.Configuration.GetConnectionString("account_manager_backendContext")));
 
 // Add services to the container.
 

@@ -5,7 +5,12 @@
       "ProjectGuid": "30b60118-0f88-4fa7-b862-019ce29908c4",
       "DisplayName": "account-manager-frontend",
       "ColorIndex": 0
+    },
+    "33ef533a-dc30-4925-8464-d2a5787fd256": {
+      "ProjectGuid": "33ef533a-dc30-4925-8464-d2a5787fd256",
+      "DisplayName": "account-manager-backend",
+      "ColorIndex": 1
     }
   },
-  "NextColorIndex": 1
+  "NextColorIndex": 2
 }
