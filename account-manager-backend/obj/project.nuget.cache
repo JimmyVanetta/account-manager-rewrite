@@ -1,0 +1,15 @@
+{
+  "version": 2,
+  "dgSpecHash": "IjwGIQ6kMmes3Z2UIJdssyzSbgpodPH5OieuJs4/bTjleTiJ03vfeVX3Ti9EGKENoBsEB18jbe0jjhBsVlovow==",
+  "success": true,
+  "projectFilePath": "C:\\Users\\j_van\\Source\\Repos\\account-manager-rewrite\\account-manager-backend\\account-manager-backend.csproj",
+  "expectedPackageFiles": [
+    "C:\\Users\\j_van\\.nuget\\packages\\microsoft.extensions.apidescription.server\\3.0.0\\microsoft.extensions.apidescription.server.3.0.0.nupkg.sha512",
+    "C:\\Users\\j_van\\.nuget\\packages\\microsoft.openapi\\1.2.3\\microsoft.openapi.1.2.3.nupkg.sha512",
+    "C:\\Users\\j_van\\.nuget\\packages\\swashbuckle.aspnetcore\\6.2.3\\swashbuckle.aspnetcore.6.2.3.nupkg.sha512",
+    "C:\\Users\\j_van\\.nuget\\packages\\swashbuckle.aspnetcore.swagger\\6.2.3\\swashbuckle.aspnetcore.swagger.6.2.3.nupkg.sha512",
+    "C:\\Users\\j_van\\.nuget\\packages\\swashbuckle.aspnetcore.swaggergen\\6.2.3\\swashbuckle.aspnetcore.swaggergen.6.2.3.nupkg.sha512",
+    "C:\\Users\\j_van\\.nuget\\packages\\swashbuckle.aspnetcore.swaggerui\\6.2.3\\swashbuckle.aspnetcore.swaggerui.6.2.3.nupkg.sha512"
+  ],
+  "logs": []
+}

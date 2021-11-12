@@ -1,0 +1,11 @@
+{
+  "Version": 1,
+  "Hash": "zItU47qQlN44NnxXXJwUgl3epYnbJG3D6KKZVIH0c4M=",
+  "Source": "account-manager-backend",
+  "BasePath": "_content/account-manager-backend",
+  "Mode": "Default",
+  "ManifestType": "Build",
+  "ReferencedProjectsConfiguration": [],
+  "DiscoveryPatterns": [],
+  "Assets": []
+}
