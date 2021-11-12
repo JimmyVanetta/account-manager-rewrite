@@ -12,47 +12,47 @@ namespace account_manager_backend.Controllers
 {
     [Route("api/[controller]")]
     [ApiController]
-    public class AccountsController : ControllerBase
+    public class EmployeesController : ControllerBase
     {
         private readonly account_manager_backendContext _context;
 
-        public AccountsController(account_manager_backendContext context)
+        public EmployeesController(account_manager_backendContext context)
         {
             _context = context;
         }
 
-        // GET: api/Accounts
+        // GET: api/Employees
         [HttpGet]
-        public async Task<ActionResult<IEnumerable<Account>>> GetAccount()
+        public async Task<ActionResult<IEnumerable<Employee>>> GetEmployee()
         {
-            return await _context.Account.ToListAsync();
+            return await _context.Employee.ToListAsync();
         }
 
-        // GET: api/Accounts/AccountId
+        // GET: api/Employees/EmployeeId
         [HttpGet("{id}")]
-        public async Task<ActionResult<Account>> GetAccount(int id)
+        public async Task<ActionResult<Employee>> GetEmployee(int id)
         {
-            var account = await _context.Account.FindAsync(id);
+            var employee = await _context.Employee.FindAsync(id);
 
-            if (account == null)
+            if (employee == null)
             {
                 return NotFound();
             }
 
-            return account;
+            return employee;
         }
 
-        // PUT: api/Accounts/AccountId
-        // To protect from overposting attacks, see https://go.microsoft.com/fwlink/?linkid=2123754
+        // PUT: api/Employees/EmployeeId
+        // To protect from overposting attacks, see https://go.microsoft.com/fwlink/?linkid=21237EmployeeId4
         [HttpPut("{id}")]
-        public async Task<IActionResult> PutAccount(int id, Account account)
+        public async Task<IActionResult> PutEmployee(int id, Employee employee)
         {
-            if (id != account.AccountId)
+            if (id != employee.EmployeeId)
             {
                 return BadRequest();
             }
 
-            _context.Entry(account).State = EntityState.Modified;
+            _context.Entry(employee).State = EntityState.Modified;
 
             try
             {
@@ -60,7 +60,7 @@ namespace account_manager_backend.Controllers
             }
             catch (DbUpdateConcurrencyException)
             {
-                if (!AccountExists(id))
+                if (!EmployeeExists(id))
                 {
                     return NotFound();
                 }
@@ -73,36 +73,36 @@ namespace account_manager_backend.Controllers
             return NoContent();
         }
 
-        // POST: api/Accounts
+        // POST: api/Employees
         // To protect from overposting attacks, see https://go.microsoft.com/fwlink/?linkid=2123754
         [HttpPost]
-        public async Task<ActionResult<Account>> PostAccount(Account account)
+        public async Task<ActionResult<Employee>> PostEmployee(Employee employee)
         {
-            _context.Account.Add(account);
+            _context.Employee.Add(employee);
             await _context.SaveChangesAsync();
 
-            return CreatedAtAction("GetAccount", new { id = account.AccountId }, account);
+            return CreatedAtAction("GetEmployee", new { id = employee.EmployeeId }, employee);
         }
 
-        // DELETE: api/Accounts/AccountId
+        // DELETE: api/Employees/EmployeeId
         [HttpDelete("{id}")]
-        public async Task<IActionResult> DeleteAccount(int id)
+        public async Task<IActionResult> DeleteEmployee(int id)
         {
-            var account = await _context.Account.FindAsync(id);
-            if (account == null)
+            var employee = await _context.Employee.FindAsync(id);
+            if (employee == null)
             {
                 return NotFound();
             }
 
-            _context.Account.Remove(account);
+            _context.Employee.Remove(employee);
             await _context.SaveChangesAsync();
 
             return NoContent();
         }
 
-        private bool AccountExists(int id)
+        private bool EmployeeExists(int id)
         {
-            return _context.Account.Any(e => e.AccountId == id);
+            return _context.Employee.Any(e => e.EmployeeId == id);
         }
     }
 }

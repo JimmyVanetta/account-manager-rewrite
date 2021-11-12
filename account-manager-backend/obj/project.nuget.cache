@@ -1,6 +1,6 @@
 {
   "version": 2,
-  "dgSpecHash": "wx1OSSJXxat04MvoJ1h3KK84GXg54eUbCwvoCtGbjecP4Rthb+/q0GwfPuym0ZAEKh9p6C2lPjId71ktCN8oHw==",
+  "dgSpecHash": "+5Vb41MvWRc8hA2fz2GQYaIwe+AKsX1DFYNXVbd0t4pqQe87KwozsWA3hGmsua2ZpAaAIAOOdmqteSbGMs2QPw==",
   "success": true,
   "projectFilePath": "C:\\Users\\j_van\\Source\\Repos\\account-manager-rewrite\\account-manager-backend\\account-manager-backend.csproj",
   "expectedPackageFiles": [
@@ -8,6 +8,7 @@
     "C:\\Users\\j_van\\.nuget\\packages\\messagepack\\2.1.152\\messagepack.2.1.152.nupkg.sha512",
     "C:\\Users\\j_van\\.nuget\\packages\\messagepack.annotations\\2.1.152\\messagepack.annotations.2.1.152.nupkg.sha512",
     "C:\\Users\\j_van\\.nuget\\packages\\messagepackanalyzer\\2.1.152\\messagepackanalyzer.2.1.152.nupkg.sha512",
+    "C:\\Users\\j_van\\.nuget\\packages\\microsoft.aspnetcore.diagnostics.entityframeworkcore\\6.0.0\\microsoft.aspnetcore.diagnostics.entityframeworkcore.6.0.0.nupkg.sha512",
     "C:\\Users\\j_van\\.nuget\\packages\\microsoft.aspnetcore.razor.language\\6.0.0\\microsoft.aspnetcore.razor.language.6.0.0.nupkg.sha512",
     "C:\\Users\\j_van\\.nuget\\packages\\microsoft.bcl.asyncinterfaces\\5.0.0\\microsoft.bcl.asyncinterfaces.5.0.0.nupkg.sha512",
     "C:\\Users\\j_van\\.nuget\\packages\\microsoft.build\\16.9.0\\microsoft.build.16.9.0.nupkg.sha512",

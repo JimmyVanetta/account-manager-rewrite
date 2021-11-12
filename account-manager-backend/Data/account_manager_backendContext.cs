@@ -15,5 +15,7 @@ namespace account_manager_backend.Data
         }
 
         public DbSet<account_manager_backend.Models.Account> Account { get; set; }
+
+        public DbSet<account_manager_backend.Models.Employee> Employee { get; set; }
     }
 }
