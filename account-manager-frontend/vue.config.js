@@ -29,5 +29,9 @@ module.exports = {
             }
         },
         port: 5002
-    }
+    },
+
+    transpileDependencies: [
+      'vuetify'
+    ]
 }
