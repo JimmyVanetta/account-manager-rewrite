@@ -23,7 +23,7 @@ namespace account_manager_backend.Controllers
 
         // GET: api/Employees
         [HttpGet]
-        public async Task<ActionResult<IEnumerable<Employee>>> GetEmployee()
+        public async Task<ActionResult<IEnumerable<Employee>>> GetEmployees()
         {
             return await _context.Employee.ToListAsync();
         }

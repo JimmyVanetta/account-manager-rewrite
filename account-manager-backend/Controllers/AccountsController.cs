@@ -23,7 +23,7 @@ namespace account_manager_backend.Controllers
 
         // GET: api/Accounts
         [HttpGet]
-        public async Task<ActionResult<IEnumerable<Account>>> GetAccount()
+        public async Task<ActionResult<IEnumerable<Account>>> GetAccounts()
         {
             return await _context.Account.ToListAsync();
         }

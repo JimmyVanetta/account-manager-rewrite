@@ -1,12 +1,12 @@
-/* eslint-disable import/prefer-default-export */
+/* eslint-disable linebreak-style */
 import Vue from 'vue';
 import Vuex from 'vuex';
-import accounts from './modules/AccountStore';
-import employees from './modules/EmployeeStore';
+import accounts from './modules/AccountsStore';
+import employees from './modules/EmployeesStore';
 
 Vue.use(Vuex);
 
-export const store = new Vuex.Store({
+export default new Vuex.Store({
   modules: {
     accounts,
     employees,
