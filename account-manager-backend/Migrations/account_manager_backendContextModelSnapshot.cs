@@ -104,7 +104,25 @@ namespace account_manager_backend.Migrations
 
                     b.HasKey("EmployeeId");
 
+                    b.HasIndex("AccountId");
+
                     b.ToTable("Employee");
+                });
+
+            modelBuilder.Entity("account_manager_backend.Models.Employee", b =>
+                {
+                    b.HasOne("account_manager_backend.Models.Account", "Account")
+                        .WithMany("Employees")
+                        .HasForeignKey("AccountId")
+                        .OnDelete(DeleteBehavior.Cascade)
+                        .IsRequired();
+
+                    b.Navigation("Account");
+                });
+
+            modelBuilder.Entity("account_manager_backend.Models.Account", b =>
+                {
+                    b.Navigation("Employees");
                 });
 #pragma warning restore 612, 618
         }

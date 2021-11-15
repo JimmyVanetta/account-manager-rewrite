@@ -5,7 +5,6 @@ namespace account_manager_backend.Models
 {
     public class Account
     {   
-        [Key]
         [DatabaseGenerated(DatabaseGeneratedOption.Identity)]
         public int AccountId { get; set; }
         [Required]
@@ -18,6 +17,9 @@ namespace account_manager_backend.Models
         public int? PostalCode { get; set; }
         [Required]
         public bool IsObsolete { get; set; }
+        [Required]
         public DateTime CreatedDate { get; set; }
+
+        public IList<Employee>? Employees { get; set; }
     }
 }

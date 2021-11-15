@@ -10,7 +10,7 @@ using account_manager_backend.Models;
 
 namespace account_manager_backend.Controllers
 {
-    [Route("api/[controller]")]
+    [Route("[controller]")]
     [ApiController]
     public class AccountsController : ControllerBase
     {
@@ -21,33 +21,35 @@ namespace account_manager_backend.Controllers
             _context = context;
         }
 
-        // GET: api/Accounts
-        [HttpGet]
+        // GET: /GetAccounts
+        [HttpGet("/GetAccounts")]
         public async Task<ActionResult<IEnumerable<Account>>> GetAccounts()
         {
-            return await _context.Account.ToListAsync();
+            var accounts = await _context.Account.Where(a => a.IsObsolete != true).ToListAsync();
+
+            return Ok(accounts);
         }
 
-        // GET: api/Accounts/AccountId
-        [HttpGet("{id}")]
-        public async Task<ActionResult<Account>> GetAccount(int id)
+        // GET: /GetAccount?AccountId={ accountId }
+        [HttpGet("/GetAccount")]
+        public async Task<ActionResult<Account>> GetAccountByAccountId(int accountId)
         {
-            var account = await _context.Account.FindAsync(id);
+            var account = await _context.Account.FirstOrDefaultAsync(a => a.AccountId == accountId & a.IsObsolete != true);
 
             if (account == null)
             {
                 return NotFound();
             }
 
-            return account;
+            return Ok(account);
         }
 
-        // PUT: api/Accounts/AccountId
+        // PUT: /EditAccount?AccountId={ AccountId } + Account JSON Object
         // To protect from overposting attacks, see https://go.microsoft.com/fwlink/?linkid=2123754
-        [HttpPut("{id}")]
-        public async Task<IActionResult> PutAccount(int id, Account account)
+        [HttpPut("/EditAccount")]
+        public async Task<IActionResult> EditAccount(int accountId, Account account)
         {
-            if (id != account.AccountId)
+            if (accountId != account.AccountId)
             {
                 return BadRequest();
             }
@@ -60,7 +62,7 @@ namespace account_manager_backend.Controllers
             }
             catch (DbUpdateConcurrencyException)
             {
-                if (!AccountExists(id))
+                if (!AccountExists(accountId))
                 {
                     return NotFound();
                 }
@@ -70,25 +72,25 @@ namespace account_manager_backend.Controllers
                 }
             }
 
-            return NoContent();
+            return Ok(account);
         }
 
-        // POST: api/Accounts
+        // POST: /AddAccount + Account JSON Object
         // To protect from overposting attacks, see https://go.microsoft.com/fwlink/?linkid=2123754
-        [HttpPost]
-        public async Task<ActionResult<Account>> PostAccount(Account account)
+        [HttpPost("/AddAccount")]
+        public async Task<ActionResult<Account>> AddAccount(Account account)
         {
             _context.Account.Add(account);
             await _context.SaveChangesAsync();
 
-            return CreatedAtAction("GetAccount", new { id = account.AccountId }, account);
+            return CreatedAtAction("GetAccountByAccountId", new { accountId = account.AccountId }, account);
         }
-
-        // DELETE: api/Accounts/AccountId
-        [HttpDelete("{id}")]
-        public async Task<IActionResult> DeleteAccount(int id)
+        // ONLY FOR ADMIN USE!!
+        // DELETE: /DeleteAccount?AccountId={ accountId }
+        [HttpDelete("/DeleteAccount")]
+        public async Task<IActionResult> DeleteAccount(int accountId)
         {
-            var account = await _context.Account.FindAsync(id);
+            var account = await _context.Account.FindAsync(accountId);
             if (account == null)
             {
                 return NotFound();
@@ -97,9 +99,9 @@ namespace account_manager_backend.Controllers
             _context.Account.Remove(account);
             await _context.SaveChangesAsync();
 
-            return NoContent();
+            return Ok();
         }
-
+        // HELPER METHODS
         private bool AccountExists(int id)
         {
             return _context.Account.Any(e => e.AccountId == id);

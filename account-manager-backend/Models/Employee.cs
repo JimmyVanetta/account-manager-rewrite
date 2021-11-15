@@ -4,12 +4,9 @@ using System.ComponentModel.DataAnnotations.Schema;
 namespace account_manager_backend.Models
 {
     public class Employee
-    {
-        [Key]
+    {   
         [DatabaseGenerated(DatabaseGeneratedOption.Identity)]
         public int EmployeeId { get; set; }
-        [Required]
-        public int AccountId { get; set; }
         [Required]
         public string? Name { get; set; }
         public int? Age { get; set; }
@@ -21,5 +18,8 @@ namespace account_manager_backend.Models
         [Required]
         public bool IsObsolete { get; set; }
         public DateTime HireDate { get; set; }
+        [Required]
+        public int AccountId { get; set; }
+        public Account? Account { get; set; } 
     }
 }

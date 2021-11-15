@@ -6,6 +6,7 @@ var builder = WebApplication.CreateBuilder(args);
 builder.Services.AddDbContext<account_manager_backendContext>(options =>
     options.UseSqlServer(builder.Configuration.GetConnectionString("account_manager_backendContext")));
 
+
 // Add services to the container.
 
 builder.Services.AddControllers();
